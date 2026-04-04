@@ -1,0 +1,145 @@
+.footer {
+  background: var(--dark-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 4rem 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand {
+  .brand {
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p {
+    color: var(--muted-text);
+    margin-top: 1rem;
+    line-height: 1.7;
+    max-width: 300px;
+  }
+}
+
+.footer-column {
+  h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  a {
+    color: var(--muted-text);
+    font-size: 0.9375rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+
+  li {
+    color: var(--muted-text);
+    font-size: 0.9375rem;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--dark-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-text);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: var(--gradient);
+        border-color: transparent;
+        color: white;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  p {
+    color: var(--muted-text);
+    font-size: 0.875rem;
+  }
+
+  .heart {
+    color: #ef4444;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+
+    p {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    p {
+      max-width: 100%;
+    }
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

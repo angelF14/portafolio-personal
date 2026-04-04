@@ -1,0 +1,95 @@
+<section class="hero">
+  <nav class="navbar">
+    <div class="nav-brand">AF</div>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre Mí</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#experience">Experiencia</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="menuOpen()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" [class.open]="menuOpen()">
+    <ul>
+      <li><a href="#about" (click)="closeMenu()">Sobre Mí</a></li>
+      <li><a href="#skills" (click)="closeMenu()">Habilidades</a></li>
+      <li><a href="#experience" (click)="closeMenu()">Experiencia</a></li>
+      <li><a href="#contact" (click)="closeMenu()">Contacto</a></li>
+    </ul>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Disponible para trabajar
+      </div>
+      <h1 class="hero-title">
+        Hola, soy <span class="gradient-text">Angel Gabriel Flores Elvir</span>
+      </h1>
+      <p class="hero-subtitle">
+        Pasante de Informática Administrativa con enfoque en desarrollo web y análisis de sistemas.
+        Experiencia en diseño, mejora y mantenimiento de aplicaciones web con tecnologías modernas.
+        Apasionado por la optimización de procesos mediante soluciones escalables.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">
+          Contactar
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#experience" class="btn btn-outline">
+          Ver Proyectos
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">Proyectos realizados</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">2+</span>
+          <span class="stat-label">Años de experiencia</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Tecnologías dominadas</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="image-wrapper">
+        <img src="/foto angel.png" alt="Angel Gabriel Flores Elvir" class="image-placeholder">
+        <div class="floating-card card-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          <span>Estudiante UNAH</span>
+        </div>
+        <div class="floating-card card-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+          <span>Desarrollo Web</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <a href="#about">
+      <span>Scroll</span>
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </a>
+  </div>
+</section>
