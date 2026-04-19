@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, HostListener } from '@angular/core';
 
 interface ExperienceItem {
   title: string;
@@ -13,6 +13,7 @@ interface ProjectItem {
   description: string;
   image: string;
   tags: string[];
+  link?: string;
 }
 
 @Component({
@@ -22,6 +23,23 @@ interface ProjectItem {
   styleUrl: './experience.scss',
 })
 export class Experience {
+  selectedProject = signal<ProjectItem | null>(null);
+
+  openModal(project: ProjectItem): void {
+    this.selectedProject.set(project);
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal(): void {
+    this.selectedProject.set(null);
+    document.body.style.overflow = '';
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscKey(): void {
+    this.closeModal();
+  }
+
   experiences: ExperienceItem[] = [
     {
       title: 'Desarrollador Front-End (Pasantía)',
@@ -49,16 +67,15 @@ export class Experience {
   projects: ProjectItem[] = [
     {
       title: 'Sistema de Gestión Documental - Grupo W',
-      description: 'Plataforma web para automatización de procesos de crédito automotriz y seguros. Gestión documental completa con flujos de aprobación para Crefisa/Credifisa.',
+      description: 'Plataforma web para automatización de procesos de crédito automotriz y seguros. Gestión documental completa con flujos de aprobación para Crefisa/Credifisa. Incluye módulos de carga, validación y firma digital de documentos.',
       image: 'Seguros-Crefisa.jpg',
       tags: ['PHP', 'Laravel', 'Node.js', 'MySQL']
     },
     {
       title: 'Modernización DIPP UNAH',
-      description: 'Rediseño y migración del sistema de gestión académica DIPP de la UNAH, mejorando la experiencia de usuario y funcionalidades con tecnologías modernas.',
+      description: 'Rediseño y migración del sistema de gestión académica DIPP de la UNAH, mejorando la experiencia de usuario y funcionalidades con tecnologías modernas. Se implementaron nuevas interfaces responsivas y módulos de reportería.',
       image: 'unah.jpg',
       tags: ['Angular', 'TypeScript', 'Material Design']
     },
-    
   ];
 }

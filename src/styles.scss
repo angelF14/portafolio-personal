@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary-color: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary-color: #ec4899;
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary-color: #60a5fa;
   --accent-color: #06b6d4;
-  --dark-bg: #0f172a;
-  --dark-card: #1e293b;
-  --light-text: #f8fafc;
+  --dark-bg: #0a0f1e;
+  --dark-card: #111827;
+  --light-text: #f0f6ff;
   --muted-text: #94a3b8;
-  --border-color: #334155;
+  --border-color: #1e3a5f;
   --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
-  --gradient-text: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --gradient-text: linear-gradient(135deg, var(--primary-color), var(--accent-color));
 }
 
 * {
@@ -74,11 +74,11 @@ a {
   &.btn-primary {
     background: var(--gradient);
     color: white;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.55);
     }
   }
 
@@ -105,7 +105,7 @@ a {
   &:hover {
     transform: translateY(-5px);
     border-color: var(--primary-color);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
   }
 }
 
@@ -115,7 +115,7 @@ a {
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 500;
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
 }
