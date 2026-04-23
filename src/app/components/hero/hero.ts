@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -8,6 +8,12 @@ import { Component, signal } from '@angular/core';
 })
 export class Hero {
   menuOpen = signal(false);
+  scrolled = signal(false);
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrolled.set(window.scrollY > 50);
+  }
 
   toggleMenu() {
     this.menuOpen.update(v => !v);
