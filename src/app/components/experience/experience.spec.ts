@@ -1,5 +1,5 @@
+import { describe, it, expect, beforeEach } from 'vitest';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Experience } from './experience';
 
 describe('Experience', () => {
@@ -18,5 +18,14 @@ describe('Experience', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should open and close project modal', () => {
+    expect(component.selectedProject()).toBeNull();
+    const project = component.projects[0];
+    component.openModal(project);
+    expect(component.selectedProject()).toBe(project);
+    component.closeModal();
+    expect(component.selectedProject()).toBeNull();
   });
 });

@@ -1,56 +1,90 @@
 <section class="section experience" id="experience">
   <div class="container">
     <!-- Experiencia Laboral -->
-    <div class="experience-section">
-      <h2 class="section-title">Experiencia Laboral</h2>
+    <div class="experience-block">
+      <div class="section-header">
+        <span class="section-eyebrow">// 03. TRAYECTORIA LABORAL</span>
+        <h2 class="section-title">Experiencia en Producción</h2>
+        <p class="section-subtitle">
+          Participación activa en el desarrollo, modernización y soporte de sistemas empresariales e institucionales de alto impacto.
+        </p>
+      </div>
 
       <div class="timeline">
         @for (exp of experiences; track exp.title; let i = $index) {
-        <div class="timeline-item" [class.reverse]="i % 2 !== 0">
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>{{ exp.title }}</h3>
-              <span class="company">{{ exp.company }}</span>
-              <span class="period">{{ exp.period }}</span>
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+
+          <div class="timeline-card">
+            <div class="card-top-row">
+              <div>
+                <span class="role-badge">{{ exp.roleType }}</span>
+                <h3 class="role-title">{{ exp.title }}</h3>
+                <div class="company-row">
+                  <span class="company-name">{{ exp.company }}</span>
+                  <span class="location-dot">•</span>
+                  <span class="company-loc">{{ exp.location }}</span>
+                </div>
+              </div>
+              <div class="period-badge">{{ exp.period }}</div>
             </div>
-            <p class="description">{{ exp.description }}</p>
-            <div class="tech-tags">
+
+            <ul class="achievements-list">
+              @for (achievement of exp.achievements; track achievement) {
+              <li>
+                <span class="bullet-arrow">▹</span>
+                <span>{{ achievement }}</span>
+              </li>
+              }
+            </ul>
+
+            <div class="tech-stack-row">
               @for (tech of exp.technologies; track tech) {
-              <span class="tech-tag">{{ tech }}</span>
+              <span class="tech-pill">{{ tech }}</span>
               }
             </div>
-          </div>
-          <div class="timeline-dot">
-            <div class="dot"></div>
           </div>
         </div>
         }
       </div>
     </div>
 
-    <!-- Proyectos -->
-    <div class="projects-section">
-      <h2 class="section-title">Proyectos Destacados</h2>
+    <!-- Proyectos Destacados -->
+    <div class="projects-block" id="projects">
+      <div class="section-header">
+        <span class="section-eyebrow">// 04. CASOS DE ESTUDIO</span>
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <p class="section-subtitle">
+          Sistemas construidos con foco en escalabilidad, seguridad e impacto operacional.
+        </p>
+      </div>
 
       <div class="projects-grid">
         @for (project of projects; track project.title) {
         <div class="project-card" (click)="openModal(project)">
-          <div class="project-image">
-            <img [src]="project.image" [alt]="project.title" class="project-img">
-            <div class="project-overlay">
-              <div class="overlay-content">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="project-media">
+            <img [src]="project.image" [alt]="project.title" class="project-cover" loading="lazy">
+            <div class="project-hover-overlay">
+              <span class="hover-action">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/>
                 </svg>
-                <span>Saber más</span>
-              </div>
+                Ver Detalles de Arquitectura
+              </span>
             </div>
           </div>
-          <div class="project-info">
-            <h3>{{ project.title }}</h3>
-            <div class="project-tags-preview">
+
+          <div class="project-details">
+            <span class="project-subtitle-tag">{{ project.subtitle }}</span>
+            <h3 class="project-name">{{ project.title }}</h3>
+            <p class="project-brief">{{ project.description }}</p>
+
+            <div class="project-tags-list">
               @for (tag of project.tags; track tag) {
-              <span class="project-tag">{{ tag }}</span>
+              <span class="tag-badge">{{ tag }}</span>
               }
             </div>
           </div>
@@ -61,39 +95,49 @@
   </div>
 </section>
 
-<!-- Modal -->
+<!-- Modal Interactivo de Proyecto -->
 @if (selectedProject()) {
 <div class="modal-backdrop" (click)="closeModal()">
-  <div class="modal" (click)="$event.stopPropagation()">
-    <button class="modal-close" (click)="closeModal()" aria-label="Cerrar">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M18 6 6 18M6 6l12 12"/>
+  <div class="modal-dialog" (click)="$event.stopPropagation()">
+    <button class="modal-close-btn" (click)="closeModal()" aria-label="Cerrar modal">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
       </svg>
     </button>
 
-    <div class="modal-image">
-      <img [src]="selectedProject()!.image" [alt]="selectedProject()!.title" class="modal-img">
-      <div class="modal-image-gradient"></div>
+    <div class="modal-media-header">
+      <img [src]="selectedProject()!.image" [alt]="selectedProject()!.title" class="modal-banner-img">
+      <div class="modal-banner-gradient"></div>
     </div>
 
-    <div class="modal-body">
-      <div class="modal-header">
-        <h2 class="modal-title">{{ selectedProject()!.title }}</h2>
-        <div class="modal-tags">
-          @for (tag of selectedProject()!.tags; track tag) {
-          <span class="modal-tag">{{ tag }}</span>
-          }
-        </div>
+    <div class="modal-content-area">
+      <span class="modal-tagline">{{ selectedProject()!.subtitle }}</span>
+      <h3 class="modal-heading">{{ selectedProject()!.title }}</h3>
+
+      <div class="modal-tags-container">
+        @for (tag of selectedProject()!.tags; track tag) {
+        <span class="modal-tag">{{ tag }}</span>
+        }
       </div>
 
       <div class="modal-divider"></div>
 
-      <p class="modal-description">{{ selectedProject()!.description }}</p>
+      <h4 class="modal-section-title">Descripción del Sistema</h4>
+      <p class="modal-text">{{ selectedProject()!.description }}</p>
 
-      <div class="modal-actions">
-        <button class="btn-modal-close" (click)="closeModal()">
-          Cerrar
-        </button>
+      <h4 class="modal-section-title">Detalles Técnicos & Arquitectura</h4>
+      <ul class="modal-bullets">
+        @for (detail of selectedProject()!.architectureDetails; track detail) {
+        <li>
+          <span class="modal-bullet-icon">▹</span>
+          <span>{{ detail }}</span>
+        </li>
+        }
+      </ul>
+
+      <div class="modal-footer-actions">
+        <button class="btn btn-outline" (click)="closeModal()">Cerrar Ventana</button>
       </div>
     </div>
   </div>

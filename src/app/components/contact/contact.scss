@@ -1,132 +1,198 @@
 .contact {
-  background: var(--dark-card);
-
-  .section-subtitle {
-    text-align: center;
-    color: var(--muted-text);
-    font-size: 1.125rem;
-    margin-top: -2rem;
-    margin-bottom: 3rem;
-  }
+  background: var(--white);
+  border-top: 1px solid var(--border-light);
 }
 
-.contact-content {
+.contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: 1000px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 960px;
   margin: 0 auto;
 }
 
-.contact-text {
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--light-text);
-  }
-
-  p {
-    color: var(--muted-text);
-    line-height: 1.7;
-  }
-}
-
-.contact-details-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.contact-items {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.contact-item {
+.contact-card {
+  background: var(--white-soft);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  justify-content: flex-start;
-}
+  gap: 1.25rem;
+  transition: all 0.25s ease;
 
-.contact-icon {
-  width: 50px;
-  height: 50px;
-  background: rgba(59, 130, 246, 0.1);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-color);
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-
-  .label {
-    font-size: 0.875rem;
-    color: var(--muted-text);
+  &:hover {
+    border-color: var(--blue-500);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
   }
 
-  a, span:last-child {
-    color: var(--light-text);
+  &.email-card {
+    border-color: var(--blue-100);
+    background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+  }
+
+  &.cv-download-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+    border-color: var(--teal-100);
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: var(--blue-100);
+    color: var(--blue-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &.phone {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    &.social {
+      background: #f1f5f9;
+      color: #334155;
+    }
+
+    &.cv {
+      background: var(--teal-100);
+      color: var(--teal-600);
+    }
+  }
+
+  .card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .card-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .card-link {
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--blue-900);
+      word-break: break-all;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--blue-600);
+      }
+    }
+
+    .card-subtext {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+  }
+
+  .btn-copy-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--white);
+    border: 1px solid var(--blue-200, var(--blue-100));
+    color: var(--blue-700);
+    padding: 6px 12px;
+    border-radius: var(--radius-xs);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
 
     &:hover {
-      color: var(--primary-color);
+      background: var(--blue-600);
+      color: var(--white);
+      border-color: var(--blue-600);
+    }
+  }
+
+  .btn-contact-action {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #15803d;
+    background: #dcfce7;
+    padding: 6px 12px;
+    border-radius: var(--radius-xs);
+    border: 1px solid #bbf7d0;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+
+    &:hover {
+      background: #15803d;
+      color: var(--white);
+    }
+  }
+
+  .btn-download-pill {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--teal-600);
+    background: var(--teal-50);
+    padding: 6px 12px;
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--teal-100);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+
+    &:hover {
+      background: var(--teal-600);
+      color: var(--white);
+    }
+  }
+
+  .social-links-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .social-chip {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--blue-700);
+    background: var(--white);
+    padding: 4px 10px;
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--blue-600);
+      color: var(--blue-600);
     }
   }
 }
 
-.social-links {
-  h4 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--light-text);
-  }
-}
-
-.social-icons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: flex-start;
-}
-
-.social-icon {
-  width: 45px;
-  height: 45px;
-  background: var(--dark-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted-text);
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: var(--gradient);
-    border-color: transparent;
-    color: white;
-    transform: translateY(-3px);
-  }
-}
-
-@media (max-width: 992px) {
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .contact-item {
-    justify-content: flex-start;
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    .btn-copy-card, .btn-contact-action, .btn-download-pill {
+      align-self: flex-start;
+    }
   }
 }

@@ -1,98 +1,277 @@
-<section class="hero">
-  <nav class="navbar">
-    <div class="nav-brand">AF</div>
-    <ul class="nav-links">
-      <li><a href="#about">Sobre Mí</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#experience">Experiencia</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="menuOpen()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<section class="hero" id="hero">
+  <!-- Navbar -->
+  <nav class="navbar" [class.scrolled]="scrolled()">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>AF<span class="brand-slash">/</span><span class="brand-bracket">&gt;</span>
+        <span class="brand-title">Angel Flores</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">Perfil</a></li>
+        <li><a href="#skills">Herramientas</a></li>
+        <li><a href="#experience">Experiencia</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="btn-cv-nav" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>CV PDF</span>
+        </a>
+
+        <button class="menu-toggle" (click)="toggleMenu()" [class.active]="menuOpen()" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
   </nav>
 
+  <!-- Menú móvil -->
   <div class="mobile-menu" [class.open]="menuOpen()">
     <ul>
-      <li><a href="#about" (click)="closeMenu()">Sobre Mí</a></li>
-      <li><a href="#skills" (click)="closeMenu()">Habilidades</a></li>
-      <li><a href="#experience" (click)="closeMenu()">Experiencia</a></li>
+      <li><a href="#about" (click)="closeMenu()">Perfil Profesional</a></li>
+      <li><a href="#skills" (click)="closeMenu()">Herramientas & Stack</a></li>
+      <li><a href="#experience" (click)="closeMenu()">Experiencia Laboral</a></li>
+      <li><a href="#projects" (click)="closeMenu()">Proyectos Destacados</a></li>
       <li><a href="#contact" (click)="closeMenu()">Contacto</a></li>
+      <li>
+        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="mobile-cv-btn" (click)="closeMenu()" target="_blank" rel="noopener">
+          Descargar CV (PDF)
+        </a>
+      </li>
     </ul>
   </div>
 
-  <div class="hero-content">
+  <!-- Hero Content -->
+  <div class="hero-content container">
     <div class="hero-text">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        Disponible para trabajar
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        <span class="status-label">Disponible para contratación inmediata</span>
       </div>
-      <h1 class="hero-title">
-        Hola, soy <span class="gradient-text">Angel Gabriel Flores Elvir</span>
-      </h1>
-      <p class="hero-subtitle">
-        Pasante de Informática Administrativa con enfoque en desarrollo web y análisis de sistemas.
-        Experiencia en diseño, mejora y mantenimiento de aplicaciones web con tecnologías modernas.
-        Apasionado por la optimización de procesos mediante soluciones escalables.
-      </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">
-          Contactar
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
-        <a href="#experience" class="btn btn-outline">
-          Ver Proyectos
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">3+</span>
-          <span class="stat-label">Proyectos realizados</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">2+</span>
-          <span class="stat-label">Años de experiencia</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">10+</span>
-          <span class="stat-label">Tecnologías dominadas</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-image">
-      <div class="image-wrapper">
-        <img src="foto-angel.jpeg" alt="Angel Gabriel Flores Elvir" class="image-placeholder">
-        <div class="floating-card card-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-            <path d="M6 12v5c3 3 9 3 12 0v-5" />
-          </svg>
-          <span>Estudiante UNAH</span>
-        </div>
-        <div class="floating-card card-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <polyline points="16 18 22 12 16 6" />
-            <polyline points="8 6 2 12 8 18" />
-          </svg>
-          <span>Desarrollo Web</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="scroll-indicator" [class.hidden]="scrolled()">
-    <a href="#about">
-      <span>Scroll</span>
-      <div class="mouse">
-        <div class="wheel"></div>
+      <h1 class="hero-title">
+        Desarrollador <span class="highlight-text">Front-End & Web</span>
+      </h1>
+
+      <p class="hero-description">
+        <strong>Licenciado en Informática Administrativa</strong> con experiencia en desarrollo de aplicaciones web, soporte tecnológico y administración de sistemas de información. Especializado en 
+        <strong>Angular</strong>, <strong>TypeScript</strong>, integración con <strong>Laravel/Node.js</strong> y 
+        gestión de bases de datos <strong>Oracle y MySQL</strong>.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#experience" class="btn btn-primary">
+          <span>Ver Trayectoria</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+
+        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          <span>Descargar CV</span>
+        </a>
+
+        <button class="btn btn-secondary btn-copy-email" (click)="copyEmail()" title="Copiar correo electrónico">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <span class="mono-text">Copiar Email</span>
+        </button>
       </div>
-    </a>
+
+      <!-- Quick Metrics Bar -->
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <div class="metric-value">3+</div>
+          <div class="metric-label">Años en Desarrollo Web & BDs</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <div class="metric-value">3</div>
+          <div class="metric-label">Sistemas Empresariales</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <div class="metric-value">UNAH</div>
+          <div class="metric-label">DEGT / Registro V5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Signature Interactive Tech Matrix (No Photo) -->
+    <div class="hero-cockpit">
+      <div class="cockpit-window">
+        <div class="cockpit-header">
+          <div class="window-dots">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+          </div>
+          <div class="window-title">angel_flores_core_stack.tsx</div>
+          <div class="window-badge">LIVE STATUS: 100%</div>
+        </div>
+
+        <!-- Cockpit Tabs -->
+        <div class="cockpit-tabs">
+          <button class="tab-btn" [class.active]="activeTab() === 'stack'" (click)="setTab('stack')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+            <span>Stack Core</span>
+          </button>
+          <button class="tab-btn" [class.active]="activeTab() === 'impact'" (click)="setTab('impact')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Impacto</span>
+          </button>
+          <button class="tab-btn" [class.active]="activeTab() === 'terminal'" (click)="setTab('terminal')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="4 17 10 11 4 5"/>
+              <line x1="12" y1="19" x2="20" y2="19"/>
+            </svg>
+            <span>Terminal</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Stack Core View -->
+        @if (activeTab() === 'stack') {
+        <div class="cockpit-body tab-stack">
+          <div class="tech-card-mini">
+            <div class="mini-icon angular">NG</div>
+            <div class="mini-info">
+              <h4>Angular 21 & TypeScript</h4>
+              <p>Migración modular, arquitectura reactiva y Material Design en DEGT-UNAH (Registro V5)</p>
+            </div>
+            <span class="level-tag">Avanzado</span>
+          </div>
+
+          <div class="tech-card-mini">
+            <div class="mini-icon backend">PHP</div>
+            <div class="mini-info">
+              <h4>Laravel & Node.js</h4>
+              <p>APIs RESTful, autenticación y flujos documentales en Crefisa / Credifisa</p>
+            </div>
+            <span class="level-tag">Intermedio+</span>
+          </div>
+
+          <div class="tech-card-mini">
+            <div class="mini-icon db">SQL</div>
+            <div class="mini-info">
+              <h4>Oracle DB & MySQL</h4>
+              <p>PL/SQL, optimización de queries y administración en Grupo W</p>
+            </div>
+            <span class="level-tag">Avanzado</span>
+          </div>
+
+          <div class="tech-card-mini">
+            <div class="mini-icon cloud">CL</div>
+            <div class="mini-info">
+              <h4>Google Cloud, AWS & Servidores</h4>
+              <p>Despliegue de máquinas virtuales, monitoreo y mantenimiento de infraestructura</p>
+            </div>
+            <span class="level-tag">DevOps Core</span>
+          </div>
+        </div>
+        }
+
+        <!-- Tab 2: Impact Highlights View -->
+        @if (activeTab() === 'impact') {
+        <div class="cockpit-body tab-impact">
+          <div class="impact-item">
+            <div class="impact-marker">01</div>
+            <div class="impact-text">
+              <h4>Modernización Registro V5 (UNAH)</h4>
+              <p>Migración y modernización del sistema de gestión académica Registro V5, rediseño de interfaces y tecnologías web actuales.</p>
+            </div>
+          </div>
+
+          <div class="impact-item">
+            <div class="impact-marker">02</div>
+            <div class="impact-text">
+              <h4>Administración & Servidores (Grupo W)</h4>
+              <p>Administración de servidores, mantenimiento de bases de datos y gestión de infraestructura tecnológica.</p>
+            </div>
+          </div>
+
+          <div class="impact-item">
+            <div class="impact-marker">03</div>
+            <div class="impact-text">
+              <h4>Créditos y Seguros Automatizados (Crefisa)</h4>
+              <p>Plataforma web para automatizar procesos de créditos automotrices y seguros con Laravel, Node.js y MySQL.</p>
+            </div>
+          </div>
+        </div>
+        }
+
+        <!-- Tab 3: Terminal View -->
+        @if (activeTab() === 'terminal') {
+        <div class="cockpit-body tab-terminal">
+          <div class="terminal-line">
+            <span class="t-prompt">$</span> <span class="t-cmd">whoami</span>
+          </div>
+          <div class="t-output">Angel Gabriel Flores Elvir — Desarrollador Web & Front-End</div>
+
+          <div class="terminal-line">
+            <span class="t-prompt">$</span> <span class="t-cmd">engineer --specialties</span>
+          </div>
+          <div class="t-output highlight-t">['Angular', 'TypeScript', 'Laravel', 'Oracle', 'MySQL', 'Node.js']</div>
+
+          <div class="terminal-line">
+            <span class="t-prompt">$</span> <span class="t-cmd">contact --email</span>
+          </div>
+          <div class="t-output link-t">{{ email }}</div>
+
+          <div class="terminal-line">
+            <span class="t-prompt">$</span> <span class="t-cmd">status --hiring</span>
+          </div>
+          <div class="t-output status-t">READY_FOR_NEW_PROJECTS</div>
+        </div>
+        }
+
+        <div class="cockpit-footer">
+          <div class="footer-status">
+            <span class="dot-indicator"></span>
+            <span>Ubicación: Tegucigalpa, Honduras (Remoto / Presencial)</span>
+          </div>
+          <div class="footer-actions">
+            <a href="#skills" class="footer-link">Ver todas las 16+ herramientas &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- Feedback Toast -->
+@if (copiedEmail()) {
+<div class="toast-container">
+  <div class="toast">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+    <span>¡Correo copiado al portapapeles! ({{ email }})</span>
+  </div>
+</div>
+}
