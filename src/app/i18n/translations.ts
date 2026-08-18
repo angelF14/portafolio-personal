@@ -193,13 +193,13 @@ export const translations: Record<Language, TranslationSchema> = {
           status: 'LISTO_PARA_NUEVOS_PROYECTOS',
         },
         footerLocation: 'Ubicación: Tegucigalpa, Honduras (Remoto / Presencial)',
-        footerViewAll: 'Ver todas las 18+ herramientas →',
+        footerViewAll: 'Ver todas las 15+ herramientas →',
       },
     },
     skills: {
       eyebrow: '// 01. STACK & HERRAMIENTAS',
       streamingStatus: '// STREAMING CONTINUO • PAUSA CON EL CURSOR',
-      activeCount: '[ 18 TECNOLOGÍAS ACTIVAS ]',
+      activeCount: '[ 17 TECNOLOGÍAS ACTIVAS ]',
       viewAllBtn: 'Ver Todas',
       itemsCount: 'ELEMENTOS',
       categories: {

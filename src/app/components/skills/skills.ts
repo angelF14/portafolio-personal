@@ -44,7 +44,7 @@ export class Skills {
     // Bases de Datos
     { name: 'PostgreSQL', category: 'database', iconClass: 'devicon-postgresql-plain colored', code: 'PG_REL' },
     { name: 'MySQL', category: 'database', iconClass: 'devicon-mysql-original colored', code: 'SQL_DB' },
-    { name: 'Oracle DB & PL/SQL', category: 'database', iconClass: 'devicon-oracle-original colored', code: 'PL_SQL' },
+
 
     // Infraestructura & DevOps
     { name: 'Google Cloud (GCP)', category: 'devops', iconClass: 'devicon-googlecloud-plain colored', code: 'GCP_VM' },
