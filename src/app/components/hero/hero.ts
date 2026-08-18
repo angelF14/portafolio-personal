@@ -9,7 +9,7 @@ import { Component, signal, HostListener } from '@angular/core';
 export class Hero {
   menuOpen = signal(false);
   scrolled = signal(false);
-  activeTab = signal<'stack' | 'impact' | 'terminal'>('stack');
+  activeTab = signal<'pillars' | 'stack' | 'terminal'>('pillars');
   copiedEmail = signal(false);
 
   email = 'floresangelelvir@gmail.com';
@@ -27,7 +27,7 @@ export class Hero {
     this.menuOpen.set(false);
   }
 
-  setTab(tab: 'stack' | 'impact' | 'terminal') {
+  setTab(tab: 'pillars' | 'stack' | 'terminal') {
     this.activeTab.set(tab);
   }
 

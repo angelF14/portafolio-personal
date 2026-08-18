@@ -40,6 +40,14 @@
   --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-body: 'Plus Jakarta Sans', 'Source Sans 3', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-tech: 'Orbitron', 'Rajdhani', sans-serif;
+  --font-cyber: 'Rajdhani', 'Space Grotesk', sans-serif;
+  --font-retro: 'Silkscreen', 'VT323', monospace;
+  --font-retro-terminal: 'VT323', monospace;
+  --font-retro-synth: 'Audiowide', cursive;
+  --font-cubic: 'Pixelify Sans', sans-serif;
+  --font-cubic-mono: 'DotGothic16', monospace;
+  --font-cubic-square: 'Nova Square', sans-serif;
 
   /* Elevaciones & Radios */
   --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
@@ -128,18 +136,19 @@ button:focus-visible {
 .section-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--blue-700);
   background: var(--blue-50);
-  padding: 4px 12px;
+  padding: 6px 16px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--blue-100);
+  border: 1px solid var(--blue-200);
   margin-bottom: 0.75rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.06);
 }
 
 .section-title {

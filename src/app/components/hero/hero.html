@@ -9,7 +9,6 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="#about">Perfil</a></li>
         <li><a href="#skills">Herramientas</a></li>
         <li><a href="#experience">Experiencia</a></li>
         <li><a href="#projects">Proyectos</a></li>
@@ -40,7 +39,6 @@
   <!-- Menú móvil -->
   <div class="mobile-menu" [class.open]="menuOpen()">
     <ul>
-      <li><a href="#about" (click)="closeMenu()">Perfil Profesional</a></li>
       <li><a href="#skills" (click)="closeMenu()">Herramientas & Stack</a></li>
       <li><a href="#experience" (click)="closeMenu()">Experiencia Laboral</a></li>
       <li><a href="#projects" (click)="closeMenu()">Proyectos Destacados</a></li>
@@ -120,8 +118,8 @@
         </div>
         <div class="metric-divider"></div>
         <div class="metric-item">
-          <div class="metric-value">UNAH</div>
-          <div class="metric-label">DEGT / Registro V5</div>
+          <div class="metric-value">Tegucigalpa, Honduras</div>
+          <div class="metric-label">Ubicación</div>
         </div>
       </div>
 
@@ -142,6 +140,13 @@
 
         <!-- Cockpit Tabs -->
         <div class="cockpit-tabs">
+          <button class="tab-btn" [class.active]="activeTab() === 'pillars'" (click)="setTab('pillars')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            <span>Pilares</span>
+          </button>
           <button class="tab-btn" [class.active]="activeTab() === 'stack'" (click)="setTab('stack')">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2">
@@ -150,14 +155,6 @@
               <polyline points="2 12 12 17 22 12" />
             </svg>
             <span>Stack Core</span>
-          </button>
-          <button class="tab-btn" [class.active]="activeTab() === 'impact'" (click)="setTab('impact')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            <span>Impacto</span>
           </button>
           <button class="tab-btn" [class.active]="activeTab() === 'terminal'" (click)="setTab('terminal')">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -169,7 +166,57 @@
           </button>
         </div>
 
-        <!-- Tab 1: Stack Core View -->
+        <!-- Tab 1: Core Pillars View -->
+        @if (activeTab() === 'pillars') {
+        <div class="cockpit-body tab-pillars">
+          <div class="pillar-item">
+            <div class="pillar-icon-box frontend">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <div class="pillar-content">
+              <h4>Frontend Moderno</h4>
+              <p>Construcción de interfaces modulares y de alto rendimiento utilizando <strong>Angular</strong>, <strong>TypeScript</strong> y diseño responsivo, priorizando la experiencia de usuario y mantenibilidad del código.</p>
+            </div>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon-box backend">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                <line x1="6" y1="6" x2="6.01" y2="6" />
+                <line x1="6" y1="18" x2="6.01" y2="18" />
+              </svg>
+            </div>
+            <div class="pillar-content">
+              <h4>Backend & APIs</h4>
+              <p>Integración de servicios y automatización de procesos empresariales mediante <strong>PHP (Laravel)</strong> y <strong>Node.js</strong> con autenticación segura y flujos de trabajo eficientes.</p>
+            </div>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon-box db">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+            <div class="pillar-content">
+              <h4>Bases de Datos & Cloud</h4>
+              <p>Modelado, consultas complejas (PL/SQL) y optimización en <strong>PostgreSQL</strong> y <strong>MySQL</strong>, además de administración de servidores e infraestructura en Google Cloud y AWS.</p>
+            </div>
+          </div>
+        </div>
+        }
+
+        <!-- Tab 2: Stack Core View -->
         @if (activeTab() === 'stack') {
         <div class="cockpit-body tab-stack">
           <div class="tech-card-mini">
@@ -178,7 +225,6 @@
               <h4>Angular 21 & TypeScript</h4>
               <p>Migración modular, arquitectura reactiva y Material Design en DEGT-UNAH (Registro V5)</p>
             </div>
-
           </div>
 
           <div class="tech-card-mini">
@@ -187,7 +233,6 @@
               <h4>Laravel & Node.js</h4>
               <p>APIs RESTful, autenticación y flujos documentales en Crefisa / Credifisa</p>
             </div>
-
           </div>
 
           <div class="tech-card-mini">
@@ -196,7 +241,6 @@
               <h4>PostgreSQL & MySQL</h4>
               <p>PL/SQL, Administración de Bases de Datos en Grupo W</p>
             </div>
-
           </div>
 
           <div class="tech-card-mini">
@@ -206,38 +250,6 @@
               <p>Despliegue de máquinas virtuales, monitoreo y mantenimiento de infraestructura</p>
             </div>
             <span class="level-tag">DevOps Core</span>
-          </div>
-        </div>
-        }
-
-        <!-- Tab 2: Impact Highlights View -->
-        @if (activeTab() === 'impact') {
-        <div class="cockpit-body tab-impact">
-          <div class="impact-item">
-            <div class="impact-marker">01</div>
-            <div class="impact-text">
-              <h4>Modernización Registro V5 (UNAH)</h4>
-              <p>Migración y modernización del sistema de gestión académica Registro V5, rediseño de interfaces y
-                tecnologías web actuales.</p>
-            </div>
-          </div>
-
-          <div class="impact-item">
-            <div class="impact-marker">02</div>
-            <div class="impact-text">
-              <h4>Administración & Servidores (Grupo W)</h4>
-              <p>Administración de servidores, mantenimiento de bases de datos y gestión de infraestructura tecnológica.
-              </p>
-            </div>
-          </div>
-
-          <div class="impact-item">
-            <div class="impact-marker">03</div>
-            <div class="impact-text">
-              <h4>Créditos y Seguros Automatizados (Crefisa)</h4>
-              <p>Plataforma web para automatizar procesos de créditos automotrices y seguros con Laravel, Node.js y
-                MySQL.</p>
-            </div>
           </div>
         </div>
         }
