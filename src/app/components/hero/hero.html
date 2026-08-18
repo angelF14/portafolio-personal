@@ -3,7 +3,8 @@
   <nav class="navbar" [class.scrolled]="scrolled()">
     <div class="nav-container">
       <a href="#hero" class="nav-brand">
-        <span class="brand-bracket">&lt;</span>AF<span class="brand-slash">/</span><span class="brand-bracket">&gt;</span>
+        <span class="brand-bracket">&lt;</span>AF<span class="brand-slash">/</span><span
+          class="brand-bracket">&gt;</span>
         <span class="brand-title">Angel Flores</span>
       </a>
 
@@ -16,11 +17,13 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="btn-cv-nav" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
+        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="btn-cv-nav"
+          target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
           <span>CV PDF</span>
         </a>
@@ -43,7 +46,8 @@
       <li><a href="#projects" (click)="closeMenu()">Proyectos Destacados</a></li>
       <li><a href="#contact" (click)="closeMenu()">Contacto</a></li>
       <li>
-        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="mobile-cv-btn" (click)="closeMenu()" target="_blank" rel="noopener">
+        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="mobile-cv-btn"
+          (click)="closeMenu()" target="_blank" rel="noopener">
           Descargar CV (PDF)
         </a>
       </li>
@@ -55,43 +59,48 @@
     <div class="hero-text">
       <div class="status-pill">
         <span class="pulse-dot"></span>
-        <span class="status-label">Disponible para contratación inmediata</span>
+        <span class="status-label">Disponible para trabajar</span>
       </div>
 
       <h1 class="hero-title">
-        Desarrollador <span class="highlight-text">Front-End & Web</span>
+        Desarrollador <span class="highlight-text">Web & Software</span>
       </h1>
 
       <p class="hero-description">
-        <strong>Licenciado en Informática Administrativa</strong> con experiencia en desarrollo de aplicaciones web, soporte tecnológico y administración de sistemas de información. Especializado en 
-        <strong>Angular</strong>, <strong>TypeScript</strong>, integración con <strong>Laravel/Node.js</strong> y 
-        gestión de bases de datos <strong>Oracle y MySQL</strong>.
+        <strong>Licenciado en Informática Administrativa</strong> con experiencia en desarrollo de aplicaciones web,
+        soporte tecnológico y administración de sistemas de información. Especializado en
+        <strong>Angular</strong>, <strong>TypeScript</strong>, integración con <strong>Laravel/Node.js</strong> y
+        gestión de bases de datos <strong>PostgreSQL y MySQL</strong>.
       </p>
 
       <div class="hero-cta-group">
         <a href="#experience" class="btn btn-primary">
           <span>Ver Trayectoria</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
           </svg>
         </a>
 
-        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="btn btn-outline" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-            <polyline points="10 9 9 9 8 9"/>
+        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf"
+          class="btn btn-outline" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
           </svg>
           <span>Descargar CV</span>
         </a>
 
         <button class="btn btn-secondary btn-copy-email" (click)="copyEmail()" title="Copiar correo electrónico">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
           </svg>
           <span class="mono-text">Copiar Email</span>
         </button>
@@ -100,13 +109,14 @@
       <!-- Quick Metrics Bar -->
       <div class="hero-metrics">
         <div class="metric-item">
-          <div class="metric-value">3+</div>
-          <div class="metric-label">Años en Desarrollo Web & BDs</div>
+          <div class="metric-value">End-to-End</div>
+          <div class="metric-label">UI, APIs & Bases de Datos</div>
         </div>
+
         <div class="metric-divider"></div>
         <div class="metric-item">
-          <div class="metric-value">3</div>
-          <div class="metric-label">Sistemas Empresariales</div>
+          <div class="metric-value">Web + TI</div>
+          <div class="metric-label">Desarrollo & Servidores</div>
         </div>
         <div class="metric-divider"></div>
         <div class="metric-item">
@@ -114,6 +124,7 @@
           <div class="metric-label">DEGT / Registro V5</div>
         </div>
       </div>
+
     </div>
 
     <!-- Right Column: Signature Interactive Tech Matrix (No Photo) -->
@@ -132,24 +143,27 @@
         <!-- Cockpit Tabs -->
         <div class="cockpit-tabs">
           <button class="tab-btn" [class.active]="activeTab() === 'stack'" (click)="setTab('stack')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-              <polyline points="2 17 12 22 22 17"/>
-              <polyline points="2 12 12 17 22 12"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
             </svg>
             <span>Stack Core</span>
           </button>
           <button class="tab-btn" [class.active]="activeTab() === 'impact'" (click)="setTab('impact')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
             <span>Impacto</span>
           </button>
           <button class="tab-btn" [class.active]="activeTab() === 'terminal'" (click)="setTab('terminal')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="4 17 10 11 4 5"/>
-              <line x1="12" y1="19" x2="20" y2="19"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <polyline points="4 17 10 11 4 5" />
+              <line x1="12" y1="19" x2="20" y2="19" />
             </svg>
             <span>Terminal</span>
           </button>
@@ -164,7 +178,7 @@
               <h4>Angular 21 & TypeScript</h4>
               <p>Migración modular, arquitectura reactiva y Material Design en DEGT-UNAH (Registro V5)</p>
             </div>
-            <span class="level-tag">Avanzado</span>
+
           </div>
 
           <div class="tech-card-mini">
@@ -173,16 +187,16 @@
               <h4>Laravel & Node.js</h4>
               <p>APIs RESTful, autenticación y flujos documentales en Crefisa / Credifisa</p>
             </div>
-            <span class="level-tag">Intermedio+</span>
+
           </div>
 
           <div class="tech-card-mini">
             <div class="mini-icon db">SQL</div>
             <div class="mini-info">
-              <h4>Oracle DB & MySQL</h4>
-              <p>PL/SQL, optimización de queries y administración en Grupo W</p>
+              <h4>PostgreSQL & MySQL</h4>
+              <p>PL/SQL, Administración de Bases de Datos en Grupo W</p>
             </div>
-            <span class="level-tag">Avanzado</span>
+
           </div>
 
           <div class="tech-card-mini">
@@ -203,7 +217,8 @@
             <div class="impact-marker">01</div>
             <div class="impact-text">
               <h4>Modernización Registro V5 (UNAH)</h4>
-              <p>Migración y modernización del sistema de gestión académica Registro V5, rediseño de interfaces y tecnologías web actuales.</p>
+              <p>Migración y modernización del sistema de gestión académica Registro V5, rediseño de interfaces y
+                tecnologías web actuales.</p>
             </div>
           </div>
 
@@ -211,7 +226,8 @@
             <div class="impact-marker">02</div>
             <div class="impact-text">
               <h4>Administración & Servidores (Grupo W)</h4>
-              <p>Administración de servidores, mantenimiento de bases de datos y gestión de infraestructura tecnológica.</p>
+              <p>Administración de servidores, mantenimiento de bases de datos y gestión de infraestructura tecnológica.
+              </p>
             </div>
           </div>
 
@@ -219,7 +235,8 @@
             <div class="impact-marker">03</div>
             <div class="impact-text">
               <h4>Créditos y Seguros Automatizados (Crefisa)</h4>
-              <p>Plataforma web para automatizar procesos de créditos automotrices y seguros con Laravel, Node.js y MySQL.</p>
+              <p>Plataforma web para automatizar procesos de créditos automotrices y seguros con Laravel, Node.js y
+                MySQL.</p>
             </div>
           </div>
         </div>
@@ -231,12 +248,12 @@
           <div class="terminal-line">
             <span class="t-prompt">$</span> <span class="t-cmd">whoami</span>
           </div>
-          <div class="t-output">Angel Gabriel Flores Elvir — Desarrollador Web & Front-End</div>
+          <div class="t-output">Angel Gabriel Flores Elvir — Desarrollador Web & Software</div>
 
           <div class="terminal-line">
             <span class="t-prompt">$</span> <span class="t-cmd">engineer --specialties</span>
           </div>
-          <div class="t-output highlight-t">['Angular', 'TypeScript', 'Laravel', 'Oracle', 'MySQL', 'Node.js']</div>
+          <div class="t-output highlight-t">['Angular', 'TypeScript', 'Laravel', 'PostgreSQL', 'MySQL', 'Node.js']</div>
 
           <div class="terminal-line">
             <span class="t-prompt">$</span> <span class="t-cmd">contact --email</span>
@@ -268,8 +285,9 @@
 @if (copiedEmail()) {
 <div class="toast-container">
   <div class="toast">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-      <polyline points="20 6 9 17 4 12"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12" />
     </svg>
     <span>¡Correo copiado al portapapeles! ({{ email }})</span>
   </div>

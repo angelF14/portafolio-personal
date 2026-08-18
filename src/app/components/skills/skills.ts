@@ -4,9 +4,8 @@ export interface TechItem {
   name: string;
   category: 'frontend' | 'backend' | 'database' | 'devops';
   categoryLabel: string;
-  badge: string;
-  context: string;
-  highlight?: boolean;
+  iconClass: string;
+  code: string;
 }
 
 @Component({
@@ -19,130 +18,39 @@ export class Skills {
   activeCategory = signal<string>('all');
 
   categories = [
-    { id: 'all', label: 'Todas las Tecnologías' },
-    { id: 'frontend', label: 'Frontend Core' },
-    { id: 'backend', label: 'Backend & APIs' },
-    { id: 'database', label: 'Bases de Datos & SQL' },
-    { id: 'devops', label: 'DevOps & Herramientas' },
+    { id: 'all', label: 'Todas las Tecnologías', icon: 'all' },
+    { id: 'frontend', label: 'Frontend', icon: 'frontend' },
+    { id: 'backend', label: 'Backend', icon: 'backend' },
+    { id: 'database', label: 'Bases de Datos', icon: 'database' },
+    { id: 'devops', label: 'Infraestructura & TI', icon: 'devops' },
   ];
 
   skillsList: TechItem[] = [
-    {
-      name: 'Angular 21',
-      category: 'frontend',
-      categoryLabel: 'Frontend',
-      badge: 'Producción / Core',
-      context: 'Migración y arquitectura de interfaces modulares en DEGT-UNAH (DIPP).',
-      highlight: true,
-    },
-    {
-      name: 'TypeScript',
-      category: 'frontend',
-      categoryLabel: 'Frontend',
-      badge: 'Avanzado',
-      context: 'Tipado estricto, interfaces robustas y patrones reactivos.',
-      highlight: true,
-    },
-    {
-      name: 'Laravel & PHP',
-      category: 'backend',
-      categoryLabel: 'Backend',
-      badge: 'Producción',
-      context: 'Desarrollo de plataforma web de créditos automotrices en Crefisa.',
-      highlight: true,
-    },
-    {
-      name: 'Oracle Database & PL/SQL',
-      category: 'database',
-      categoryLabel: 'Bases de Datos',
-      badge: 'Administración',
-      context: 'Mantenimiento de bases de datos críticas y soporte a infraestructura en Grupo W.',
-      highlight: true,
-    },
-    {
-      name: 'MySQL',
-      category: 'database',
-      categoryLabel: 'Bases de Datos',
-      badge: 'Avanzado',
-      context: 'Modelado relacional, consultas optimizadas y gestión transaccional.',
-    },
-    {
-      name: 'Node.js & Express',
-      category: 'backend',
-      categoryLabel: 'Backend',
-      badge: 'Intermedio+',
-      context: 'Creación de servicios y APIs REST para flujos documentales.',
-    },
-    {
-      name: 'JavaScript (ES6+)',
-      category: 'frontend',
-      categoryLabel: 'Frontend',
-      badge: 'Avanzado',
-      context: 'Manipulación del DOM, programación asíncrona y lógica frontend.',
-    },
-    {
-      name: 'HTML5 & CSS3 / SCSS',
-      category: 'frontend',
-      categoryLabel: 'Frontend',
-      badge: 'Avanzado',
-      context: 'Diseño responsivo, maquetación semántica y animaciones CSS.',
-    },
-    {
-      name: 'Material Design & Bootstrap',
-      category: 'frontend',
-      categoryLabel: 'Frontend',
-      badge: 'UI Frameworks',
-      context: 'Sistemas de diseño accesibles y componentes corporativos coherentes.',
-    },
-    {
-      name: 'Google Cloud Platform (GCP)',
-      category: 'devops',
-      categoryLabel: 'Cloud / Infra',
-      badge: 'Infraestructura',
-      context: 'Gestión y configuración de máquinas virtuales y servicios en la nube.',
-    },
-    {
-      name: 'AWS (Nivel Práctico)',
-      category: 'devops',
-      categoryLabel: 'Cloud / Infra',
-      badge: 'Nube',
-      context: 'Despliegue y conceptos de infraestructura básica en la nube.',
-    },
-    {
-      name: 'Administración de Servidores',
-      category: 'devops',
-      categoryLabel: 'DevOps',
-      badge: 'Soporte TI',
-      context: 'Mantenimiento de sistemas operativos, seguridad y disponibilidad en PCservices.',
-    },
-    {
-      name: 'Git & GitHub',
-      category: 'devops',
-      categoryLabel: 'Herramientas',
-      badge: 'Versionado',
-      context: 'Control de versiones, ramas y despliegues continuos.',
-    },
-    {
-      name: 'Postman & Insomnia',
-      category: 'devops',
-      categoryLabel: 'Testing',
-      badge: 'Testing APIs',
-      context: 'Validación de endpoints, documentación y pruebas de servicios REST.',
-    },
-    {
-      name: 'Python',
-      category: 'backend',
-      categoryLabel: 'Lenguajes',
-      badge: 'Intermedio',
-      context: 'Scripts de automatización y procesamiento de datos.',
-    },
-    {
-      name: 'Java & C++',
-      category: 'backend',
-      categoryLabel: 'Lenguajes',
-      badge: 'Académico / Core',
-      context: 'Programación orientada a objetos y algoritmos de sistemas.',
-    },
+    // Frontend
+    { name: 'Angular', category: 'frontend', categoryLabel: 'Frontend', iconClass: 'devicon-angular-plain colored', code: 'NG_CORE' },
+    { name: 'TypeScript', category: 'frontend', categoryLabel: 'Frontend', iconClass: 'devicon-typescript-plain colored', code: 'TS_SPEC' },
+    { name: 'JavaScript', category: 'frontend', categoryLabel: 'Frontend', iconClass: 'devicon-javascript-plain colored', code: 'JS_ES6' },
+    { name: 'HTML5 & CSS3', category: 'frontend', categoryLabel: 'Frontend', iconClass: 'devicon-html5-plain colored', code: 'UI_WEB' },
+    { name: 'Bootstrap', category: 'frontend', categoryLabel: 'Frontend', iconClass: 'devicon-bootstrap-plain colored', code: 'CSS_LIB' },
+
+    // Backend
+    { name: 'Laravel', category: 'backend', categoryLabel: 'Backend', iconClass: 'devicon-laravel-original colored', code: 'LAR_API' },
+    { name: 'PHP', category: 'backend', categoryLabel: 'Backend', iconClass: 'devicon-php-plain colored', code: 'PHP_SRV' },
+    { name: 'Node.js', category: 'backend', categoryLabel: 'Backend', iconClass: 'devicon-nodejs-plain colored', code: 'NODE_JS' },
+    { name: 'Python', category: 'backend', categoryLabel: 'Backend', iconClass: 'devicon-python-plain colored', code: 'PY_AUTO' },
+    { name: 'Java', category: 'backend', categoryLabel: 'Backend', iconClass: 'devicon-java-plain colored', code: 'JAVA_OOP' },
+
+    // Bases de Datos
+    { name: 'PostgreSQL', category: 'database', categoryLabel: 'Bases de Datos', iconClass: 'devicon-postgresql-plain colored', code: 'PG_REL' },
+    { name: 'MySQL', category: 'database', categoryLabel: 'Bases de Datos', iconClass: 'devicon-mysql-original colored', code: 'SQL_DB' },
+    { name: 'Oracle DB & PL/SQL', category: 'database', categoryLabel: 'Bases de Datos', iconClass: 'devicon-oracle-original colored', code: 'PL_SQL' },
+
+    // Infraestructura & DevOps
+    { name: 'Google Cloud (GCP)', category: 'devops', categoryLabel: 'Infraestructura & TI', iconClass: 'devicon-googlecloud-plain colored', code: 'GCP_VM' },
+    { name: 'AWS', category: 'devops', categoryLabel: 'Infraestructura & TI', iconClass: 'devicon-amazonwebservices-plain-wordmark colored', code: 'AWS_NUB' },
+    { name: 'Git & GitHub', category: 'devops', categoryLabel: 'Infraestructura & TI', iconClass: 'devicon-git-plain colored', code: 'GIT_VCS' },
+    { name: 'Linux / Servidores', category: 'devops', categoryLabel: 'Infraestructura & TI', iconClass: 'devicon-linux-plain colored', code: 'SRV_UNX' },
+    { name: 'Postman', category: 'devops', categoryLabel: 'Infraestructura & TI', iconClass: 'devicon-postman-plain colored', code: 'API_TST' },
   ];
 
   filteredSkills = computed(() => {
@@ -153,5 +61,10 @@ export class Skills {
 
   setCategory(catId: string) {
     this.activeCategory.set(catId);
+  }
+
+  getCategoryCount(catId: string): number {
+    if (catId === 'all') return this.skillsList.length;
+    return this.skillsList.filter((s) => s.category === catId).length;
   }
 }

@@ -199,9 +199,8 @@
   margin-bottom: 1rem;
 
   .highlight-text {
-    background: linear-gradient(120deg, #1e40af 0%, #2563eb 50%, #0d9488 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--blue-600);
+    font-weight: 800;
   }
 }
 
