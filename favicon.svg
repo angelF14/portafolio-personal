@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#1e40af" stop-opacity="0.3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Card with rounded corners -->
+  <rect width="64" height="64" rx="14" fill="url(#bgGrad)" />
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="url(#borderGrad)" stroke-width="2" />
+
+  <!-- Terminal Top Bar Window Controls -->
+  <circle cx="15" cy="15" r="2.8" fill="#f43f5e" />
+  <circle cx="24" cy="15" r="2.8" fill="#fbbf24" />
+  <circle cx="33" cy="15" r="2.8" fill="#34d399" />
+  <line x1="8" y1="23" x2="56" y2="23" stroke="#1e293b" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- Terminal Prompt > -->
+  <polyline points="18,34 29,42 18,50" fill="none" stroke="url(#cyanGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Terminal Cursor _ -->
+  <line x1="36" y1="50" x2="48" y2="50" stroke="#38bdf8" stroke-width="4.5" stroke-linecap="round" />
+</svg>
