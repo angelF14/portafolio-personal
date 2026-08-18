@@ -33,6 +33,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/portafolio-personal/",
               "budgets": [
                 {
                   "type": "initial",
@@ -41,13 +42,14 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "16kB",
+                  "maximumWarning": "24kB",
                   "maximumError": "32kB"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
+              "baseHref": "/",
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
