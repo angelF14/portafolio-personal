@@ -1,15 +1,13 @@
 <section class="section skills" id="skills">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">// 01. STACK & HERRAMIENTAS</span>
+      <span class="section-eyebrow">{{ lang.t().skills.eyebrow }}</span>
     </div>
 
     <!-- Category Filter Bar -->
     <div class="filter-container">
-
-
       <div class="filter-bar" role="tablist" aria-label="Filtro de habilidades">
-        @for (cat of categories; track cat.id) {
+        @for (cat of categories(); track cat.id) {
         <button class="filter-btn" [class.active]="activeCategory() === cat.id" (click)="setCategory(cat.id)"
           type="button" role="tab" [attr.aria-selected]="activeCategory() === cat.id">
           @if (cat.id === 'all') {
@@ -62,9 +60,9 @@
       <div class="carousel-status-bar">
         <span class="status-indicator">
           <span class="status-pulse"></span>
-          <span>// STREAMING CONTINUO • PAUSA CON EL CURSOR</span>
+          <span>{{ lang.t().skills.streamingStatus }}</span>
         </span>
-        <span class="tech-count-tag">[ 18 TECNOLOGÍAS ACTIVAS ]</span>
+        <span class="tech-count-tag">{{ lang.t().skills.activeCount }}</span>
       </div>
 
       <!-- Row 1 (Scrolling Left) -->
@@ -78,7 +76,7 @@
             <div class="corner-bracket br"></div>
 
             <div class="card-telemetry">
-              <span class="telemetry-badge">{{ skill.categoryLabel }}</span>
+              <span class="telemetry-badge">{{ getCategoryLabel(skill.category) }}</span>
               <span class="telemetry-code">
                 <span class="status-led"></span>
                 {{ skill.code }}
@@ -105,7 +103,7 @@
             <div class="corner-bracket br"></div>
 
             <div class="card-telemetry">
-              <span class="telemetry-badge">{{ skill.categoryLabel }}</span>
+              <span class="telemetry-badge">{{ getCategoryLabel(skill.category) }}</span>
               <span class="telemetry-code">
                 <span class="status-led"></span>
                 {{ skill.code }}
@@ -132,7 +130,7 @@
       <div class="filtered-status-bar">
         <span class="filter-indicator">
           <span class="status-led active"></span>
-          <span>// {{ activeCategory().toUpperCase() }} ({{ filteredSkills().length }} ELEMENTOS)</span>
+          <span>// {{ activeCategory().toUpperCase() }} ({{ filteredSkills().length }} {{ lang.t().skills.itemsCount }})</span>
         </span>
         <button class="btn-reset-filter" (click)="setCategory('all')">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
@@ -140,7 +138,7 @@
             <polyline points="1 4 1 10 7 10" />
             <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
           </svg>
-          <span>Ver Todas</span>
+          <span>{{ lang.t().skills.viewAllBtn }}</span>
         </button>
       </div>
 
@@ -153,7 +151,7 @@
           <div class="corner-bracket br"></div>
 
           <div class="card-telemetry">
-            <span class="telemetry-badge">{{ skill.categoryLabel }}</span>
+            <span class="telemetry-badge">{{ getCategoryLabel(skill.category) }}</span>
             <span class="telemetry-code">
               <span class="status-led"></span>
               {{ skill.code }}
@@ -174,7 +172,6 @@
       </div>
     </div>
     }
-
 
   </div>
 </section>

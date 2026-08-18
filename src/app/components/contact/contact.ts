@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,6 +8,8 @@ import { Component, signal } from '@angular/core';
   styleUrl: './contact.scss',
 })
 export class Contact {
+  readonly lang = inject(LanguageService);
+
   copied = signal(false);
   email = 'floresangelelvir@gmail.com';
   phone = '+504 8777-3101';

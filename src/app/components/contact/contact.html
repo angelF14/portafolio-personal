@@ -1,10 +1,10 @@
 <section class="section contact" id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">// 04. CONTACTO DIRECTO</span>
-      <h2 class="section-title">Iniciemos una Conversación</h2>
+      <span class="section-eyebrow">{{ lang.t().contact.eyebrow }}</span>
+      <h2 class="section-title">{{ lang.t().contact.title }}</h2>
       <p class="section-subtitle">
-        Disponible para oportunidades laborales a tiempo completo, proyectos de desarrollo web y consultoría técnica.
+        {{ lang.t().contact.subtitle }}
       </p>
     </div>
 
@@ -19,7 +19,7 @@
           </svg>
         </div>
         <div class="card-info">
-          <span class="card-label">Correo Electrónico</span>
+          <span class="card-label">{{ lang.t().contact.emailLabel }}</span>
           <a [href]="'mailto:' + email" class="card-link">{{ email }}</a>
         </div>
         <button class="btn-copy-card" (click)="copyEmail()" title="Copiar correo">
@@ -28,7 +28,7 @@
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
           </svg>
-          <span>{{ copied() ? '¡Copiado!' : 'Copiar' }}</span>
+          <span>{{ copied() ? lang.t().contact.btnCopied : lang.t().contact.btnCopy }}</span>
         </button>
       </div>
 
@@ -42,11 +42,11 @@
           </svg>
         </div>
         <div class="card-info">
-          <span class="card-label">Teléfono / WhatsApp</span>
+          <span class="card-label">{{ lang.t().contact.phoneLabel }}</span>
           <a [href]="whatsappLink" target="_blank" rel="noopener" class="card-link">{{ phone }}</a>
         </div>
         <a [href]="whatsappLink" target="_blank" rel="noopener" class="btn-contact-action">
-          <span>WhatsApp &rarr;</span>
+          <span>{{ lang.t().contact.btnWhatsapp }}</span>
         </a>
       </div>
 
@@ -61,7 +61,7 @@
           </svg>
         </div>
         <div class="card-info">
-          <span class="card-label">Redes Profesionales</span>
+          <span class="card-label">{{ lang.t().contact.socialLabel }}</span>
           <div class="social-links-row">
             <a [href]="linkedinLink" target="_blank" rel="noopener" class="social-chip">LinkedIn</a>
             <a [href]="githubLink" target="_blank" rel="noopener" class="social-chip">GitHub</a>
@@ -81,12 +81,12 @@
           </svg>
         </div>
         <div class="card-info">
-          <span class="card-label">Curriculum Vitae</span>
-          <span class="card-subtext">PDF </span>
+          <span class="card-label">{{ lang.t().contact.cvLabel }}</span>
+          <span class="card-subtext">{{ lang.t().contact.cvFormat }}</span>
         </div>
         <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf"
           class="btn-download-pill" target="_blank" rel="noopener">
-          <span>Descargar PDF</span>
+          <span>{{ lang.t().contact.btnDownload }}</span>
         </a>
       </div>
     </div>

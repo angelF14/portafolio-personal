@@ -9,13 +9,26 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="#skills">Herramientas</a></li>
-        <li><a href="#experience">Experiencia</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#skills">{{ lang.t().nav.skills }}</a></li>
+        <li><a href="#experience">{{ lang.t().nav.experience }}</a></li>
+        <li><a href="#projects">{{ lang.t().nav.projects }}</a></li>
+        <li><a href="#contact">{{ lang.t().nav.contact }}</a></li>
       </ul>
 
       <div class="nav-actions">
+        <!-- Language Switcher Button -->
+        <button class="btn-lang-toggle" (click)="lang.toggleLanguage()" [attr.aria-label]="'Cambiar a ' + (lang.currentLang() === 'es' ? 'Inglés' : 'Español')">
+          <svg class="lang-globe-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="lang-code" [class.active]="lang.currentLang() === 'es'">ES</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-code" [class.active]="lang.currentLang() === 'en'">EN</span>
+        </button>
+
         <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="btn-cv-nav"
           target="_blank" rel="noopener">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -24,7 +37,7 @@
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
-          <span>CV PDF</span>
+          <span>{{ lang.t().nav.cvBtn }}</span>
         </a>
 
         <button class="menu-toggle" (click)="toggleMenu()" [class.active]="menuOpen()" aria-label="Abrir menú">
@@ -39,14 +52,27 @@
   <!-- Menú móvil -->
   <div class="mobile-menu" [class.open]="menuOpen()">
     <ul>
-      <li><a href="#skills" (click)="closeMenu()">Herramientas & Stack</a></li>
-      <li><a href="#experience" (click)="closeMenu()">Experiencia Laboral</a></li>
-      <li><a href="#projects" (click)="closeMenu()">Proyectos Destacados</a></li>
-      <li><a href="#contact" (click)="closeMenu()">Contacto</a></li>
+      <li class="mobile-lang-item">
+        <button class="btn-lang-toggle mobile-lang-toggle" (click)="lang.toggleLanguage()">
+          <svg class="lang-globe-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="lang-code" [class.active]="lang.currentLang() === 'es'">ESPAÑOL (ES)</span>
+          <span class="lang-divider">•</span>
+          <span class="lang-code" [class.active]="lang.currentLang() === 'en'">ENGLISH (EN)</span>
+        </button>
+      </li>
+      <li><a href="#skills" (click)="closeMenu()">{{ lang.t().nav.skills }}</a></li>
+      <li><a href="#experience" (click)="closeMenu()">{{ lang.t().nav.experience }}</a></li>
+      <li><a href="#projects" (click)="closeMenu()">{{ lang.t().nav.projects }}</a></li>
+      <li><a href="#contact" (click)="closeMenu()">{{ lang.t().nav.contact }}</a></li>
       <li>
         <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="mobile-cv-btn"
           (click)="closeMenu()" target="_blank" rel="noopener">
-          Descargar CV (PDF)
+          {{ lang.t().nav.downloadCvMobile }}
         </a>
       </li>
     </ul>
@@ -57,23 +83,23 @@
     <div class="hero-text">
       <div class="status-pill">
         <span class="pulse-dot"></span>
-        <span class="status-label">Disponible para trabajar</span>
+        <span class="status-label">{{ lang.t().hero.availablePill }}</span>
       </div>
 
       <h1 class="hero-title">
-        Desarrollador <span class="highlight-text">Web & Software</span>
+        @if (lang.t().hero.titlePrefix) {
+          {{ lang.t().hero.titlePrefix }}
+        }
+        <span class="highlight-text">{{ lang.t().hero.titleHighlight }}</span>
       </h1>
 
       <p class="hero-description">
-        <strong>Licenciado en Informática Administrativa</strong> con experiencia en desarrollo de aplicaciones web,
-        soporte tecnológico y administración de sistemas de información. Especializado en
-        <strong>Angular</strong>, <strong>TypeScript</strong>, integración con <strong>Laravel/Node.js</strong> y
-        gestión de bases de datos <strong>PostgreSQL y MySQL</strong>.
+        {{ lang.t().hero.description }}
       </p>
 
       <div class="hero-cta-group">
         <a href="#experience" class="btn btn-primary">
-          <span>Ver Trayectoria</span>
+          <span>{{ lang.t().hero.btnTrajectory }}</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12" />
@@ -91,7 +117,7 @@
             <line x1="16" y1="17" x2="8" y2="17" />
             <polyline points="10 9 9 9 8 9" />
           </svg>
-          <span>Descargar CV</span>
+          <span>{{ lang.t().hero.btnDownloadCv }}</span>
         </a>
 
         <button class="btn btn-secondary btn-copy-email" (click)="copyEmail()" title="Copiar correo electrónico">
@@ -100,32 +126,32 @@
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
           </svg>
-          <span class="mono-text">Copiar Email</span>
+          <span class="mono-text">{{ lang.t().hero.btnCopyEmail }}</span>
         </button>
       </div>
 
       <!-- Quick Metrics Bar -->
       <div class="hero-metrics">
         <div class="metric-item">
-          <div class="metric-value">End-to-End</div>
-          <div class="metric-label">UI, APIs & Bases de Datos</div>
+          <div class="metric-value">{{ lang.t().hero.metrics.m1Value }}</div>
+          <div class="metric-label">{{ lang.t().hero.metrics.m1Label }}</div>
         </div>
 
         <div class="metric-divider"></div>
         <div class="metric-item">
-          <div class="metric-value">Web + TI</div>
-          <div class="metric-label">Desarrollo & Servidores</div>
+          <div class="metric-value">{{ lang.t().hero.metrics.m2Value }}</div>
+          <div class="metric-label">{{ lang.t().hero.metrics.m2Label }}</div>
         </div>
         <div class="metric-divider"></div>
         <div class="metric-item">
-          <div class="metric-value">Tegucigalpa, Honduras</div>
-          <div class="metric-label">Ubicación</div>
+          <div class="metric-value">{{ lang.t().hero.metrics.m3Value }}</div>
+          <div class="metric-label">{{ lang.t().hero.metrics.m3Label }}</div>
         </div>
       </div>
 
     </div>
 
-    <!-- Right Column: Signature Interactive Tech Matrix (No Photo) -->
+    <!-- Right Column: Signature Interactive Tech Matrix -->
     <div class="hero-cockpit">
       <div class="cockpit-window">
         <div class="cockpit-header">
@@ -135,7 +161,7 @@
             <span class="dot-green"></span>
           </div>
           <div class="window-title">angel_flores_core_stack.tsx</div>
-          <div class="window-badge">LIVE STATUS: 100%</div>
+          <div class="window-badge">{{ lang.t().hero.cockpit.badge }}</div>
         </div>
 
         <!-- Cockpit Tabs -->
@@ -145,7 +171,7 @@
               stroke="currentColor" stroke-width="2">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg>
-            <span>Pilares</span>
+            <span>{{ lang.t().hero.cockpit.tabPillars }}</span>
           </button>
           <button class="tab-btn" [class.active]="activeTab() === 'stack'" (click)="setTab('stack')">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -154,7 +180,7 @@
               <polyline points="2 17 12 22 22 17" />
               <polyline points="2 12 12 17 22 12" />
             </svg>
-            <span>Stack Core</span>
+            <span>{{ lang.t().hero.cockpit.tabStack }}</span>
           </button>
           <button class="tab-btn" [class.active]="activeTab() === 'terminal'" (click)="setTab('terminal')">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -162,7 +188,7 @@
               <polyline points="4 17 10 11 4 5" />
               <line x1="12" y1="19" x2="20" y2="19" />
             </svg>
-            <span>Terminal</span>
+            <span>{{ lang.t().hero.cockpit.tabTerminal }}</span>
           </button>
         </div>
 
@@ -178,8 +204,8 @@
               </svg>
             </div>
             <div class="pillar-content">
-              <h4>Frontend Moderno</h4>
-              <p>Construcción de interfaces modulares y de alto rendimiento utilizando <strong>Angular</strong>, <strong>TypeScript</strong> y diseño responsivo, priorizando la experiencia de usuario y mantenibilidad del código.</p>
+              <h4>{{ lang.t().hero.cockpit.pillars.frontendTitle }}</h4>
+              <p>{{ lang.t().hero.cockpit.pillars.frontendDesc }}</p>
             </div>
           </div>
 
@@ -194,8 +220,8 @@
               </svg>
             </div>
             <div class="pillar-content">
-              <h4>Backend & APIs</h4>
-              <p>Integración de servicios y automatización de procesos empresariales mediante <strong>PHP (Laravel)</strong> y <strong>Node.js</strong> con autenticación segura y flujos de trabajo eficientes.</p>
+              <h4>{{ lang.t().hero.cockpit.pillars.backendTitle }}</h4>
+              <p>{{ lang.t().hero.cockpit.pillars.backendDesc }}</p>
             </div>
           </div>
 
@@ -209,8 +235,8 @@
               </svg>
             </div>
             <div class="pillar-content">
-              <h4>Bases de Datos & Cloud</h4>
-              <p>Modelado, consultas complejas (PL/SQL) y optimización en <strong>PostgreSQL</strong> y <strong>MySQL</strong>, además de administración de servidores e infraestructura en Google Cloud y AWS.</p>
+              <h4>{{ lang.t().hero.cockpit.pillars.dbTitle }}</h4>
+              <p>{{ lang.t().hero.cockpit.pillars.dbDesc }}</p>
             </div>
           </div>
         </div>
@@ -223,7 +249,7 @@
             <div class="mini-icon angular">NG</div>
             <div class="mini-info">
               <h4>Angular 21 & TypeScript</h4>
-              <p>Migración modular, arquitectura reactiva y Material Design en DEGT-UNAH (Registro V5)</p>
+              <p>{{ lang.t().hero.cockpit.stack.angularDesc }}</p>
             </div>
           </div>
 
@@ -231,7 +257,7 @@
             <div class="mini-icon backend">PHP</div>
             <div class="mini-info">
               <h4>Laravel & Node.js</h4>
-              <p>APIs RESTful, autenticación y flujos documentales en Crefisa / Credifisa</p>
+              <p>{{ lang.t().hero.cockpit.stack.laravelDesc }}</p>
             </div>
           </div>
 
@@ -239,17 +265,17 @@
             <div class="mini-icon db">SQL</div>
             <div class="mini-info">
               <h4>PostgreSQL & MySQL</h4>
-              <p>PL/SQL, Administración de Bases de Datos en Grupo W</p>
+              <p>{{ lang.t().hero.cockpit.stack.sqlDesc }}</p>
             </div>
           </div>
 
           <div class="tech-card-mini">
             <div class="mini-icon cloud">CL</div>
             <div class="mini-info">
-              <h4>Google Cloud, AWS & Servidores</h4>
-              <p>Despliegue de máquinas virtuales, monitoreo y mantenimiento de infraestructura</p>
+              <h4>Google Cloud, AWS & Linux</h4>
+              <p>{{ lang.t().hero.cockpit.stack.cloudDesc }}</p>
             </div>
-            <span class="level-tag">DevOps Core</span>
+            <span class="level-tag">{{ lang.t().hero.cockpit.stack.devopsBadge }}</span>
           </div>
         </div>
         }
@@ -260,7 +286,7 @@
           <div class="terminal-line">
             <span class="t-prompt">$</span> <span class="t-cmd">whoami</span>
           </div>
-          <div class="t-output">Angel Gabriel Flores Elvir — Desarrollador Web & Software</div>
+          <div class="t-output">{{ lang.t().hero.cockpit.terminal.whoami }}</div>
 
           <div class="terminal-line">
             <span class="t-prompt">$</span> <span class="t-cmd">engineer --specialties</span>
@@ -275,17 +301,17 @@
           <div class="terminal-line">
             <span class="t-prompt">$</span> <span class="t-cmd">status --hiring</span>
           </div>
-          <div class="t-output status-t">READY_FOR_NEW_PROJECTS</div>
+          <div class="t-output status-t">{{ lang.t().hero.cockpit.terminal.status }}</div>
         </div>
         }
 
         <div class="cockpit-footer">
           <div class="footer-status">
             <span class="dot-indicator"></span>
-            <span>Ubicación: Tegucigalpa, Honduras (Remoto / Presencial)</span>
+            <span>{{ lang.t().hero.cockpit.footerLocation }}</span>
           </div>
           <div class="footer-actions">
-            <a href="#skills" class="footer-link">Ver todas las 16+ herramientas &rarr;</a>
+            <a href="#skills" class="footer-link">{{ lang.t().hero.cockpit.footerViewAll }}</a>
           </div>
         </div>
       </div>
@@ -301,7 +327,7 @@
       stroke-width="2.5">
       <polyline points="20 6 9 17 4 12" />
     </svg>
-    <span>¡Correo copiado al portapapeles! ({{ email }})</span>
+    <span>{{ lang.t().hero.toastCopied }} ({{ email }})</span>
   </div>
 </div>
 }

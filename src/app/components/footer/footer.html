@@ -4,24 +4,23 @@
       <div class="footer-brand">
         <span class="brand-logo">&lt;AF /&gt;</span>
         <p class="brand-desc">
-          Desarrollador Front-End & Web especializado en arquitecturas reactivas con Angular, integración con Laravel y administración de bases de datos.
+          {{ lang.t().footer.brandDesc }}
         </p>
       </div>
 
       <div class="footer-links-group">
-        <span class="links-title">Navegación Rápida</span>
+        <span class="links-title">{{ lang.t().footer.navTitle }}</span>
         <ul>
-          <li><a href="#hero">Inicio</a></li>
-          <li><a href="#about">Perfil Profesional</a></li>
-          <li><a href="#skills">Herramientas & Stack</a></li>
-          <li><a href="#experience">Experiencia Laboral</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#contact">Contacto</a></li>
+          <li><a href="#hero">{{ lang.t().footer.home }}</a></li>
+          <li><a href="#skills">{{ lang.t().footer.skills }}</a></li>
+          <li><a href="#experience">{{ lang.t().footer.experience }}</a></li>
+          <li><a href="#projects">{{ lang.t().footer.projects }}</a></li>
+          <li><a href="#contact">{{ lang.t().footer.contact }}</a></li>
         </ul>
       </div>
 
       <div class="footer-links-group">
-        <span class="links-title">Conexión Directa</span>
+        <span class="links-title">{{ lang.t().footer.contactTitle }}</span>
         <ul>
           <li><a href="mailto:floresangelelvir@gmail.com">floresangelelvir@gmail.com</a></li>
           <li><a href="https://wa.me/50487773101" target="_blank" rel="noopener">+504 8777-3101</a></li>
@@ -32,9 +31,9 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 Angel Gabriel Flores Elvir • Diseñado para alto impacto profesional.</p>
+      <p>{{ lang.t().footer.copyright }}</p>
       <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf" class="footer-cv-link" target="_blank" rel="noopener">
-        Descargar CV PDF &darr;
+        {{ lang.t().footer.downloadCv }}
       </a>
     </div>
   </div>

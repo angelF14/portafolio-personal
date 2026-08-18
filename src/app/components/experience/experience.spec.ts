@@ -22,9 +22,8 @@ describe('Experience', () => {
 
   it('should open and close project modal', () => {
     expect(component.selectedProject()).toBeNull();
-    const project = component.projects[0];
-    component.openModal(project);
-    expect(component.selectedProject()).toBe(project);
+    component.openModal(0);
+    expect(component.selectedProject()).toEqual(component.projects()[0]);
     component.closeModal();
     expect(component.selectedProject()).toBeNull();
   });

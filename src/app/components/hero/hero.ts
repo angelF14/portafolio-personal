@@ -1,4 +1,5 @@
-import { Component, signal, HostListener } from '@angular/core';
+import { Component, signal, HostListener, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,6 +8,8 @@ import { Component, signal, HostListener } from '@angular/core';
   styleUrl: './hero.scss',
 })
 export class Hero {
+  readonly lang = inject(LanguageService);
+
   menuOpen = signal(false);
   scrolled = signal(false);
   activeTab = signal<'pillars' | 'stack' | 'terminal'>('pillars');
