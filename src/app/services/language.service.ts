@@ -13,6 +13,12 @@ export class LanguageService {
     return translations[this.currentLang()];
   });
 
+  readonly cvFile = computed<string>(() => {
+    return this.currentLang() === 'en'
+      ? 'CV_Angel_Gabriel_Flores_Elvir_EN_ATS.pdf'
+      : 'cv_ Angel Gabriel Flores Elvir.pdf';
+  });
+
   private getInitialLanguage(): Language {
     try {
       if (typeof localStorage !== 'undefined') {

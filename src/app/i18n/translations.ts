@@ -312,7 +312,7 @@ export const translations: Record<Language, TranslationSchema> = {
     },
     footer: {
       brandDesc:
-        'Desarrollador Front-End & Web especializado en arquitecturas reactivas con Angular, integración con Laravel y administración de bases de datos.',
+        'Desarrollador Web & Software especializado en arquitecturas reactivas con Angular, integración con Laravel y administración de bases de datos.',
       navTitle: 'Navegación Rápida',
       contactTitle: 'Conexión Directa',
       home: 'Inicio',
@@ -379,13 +379,13 @@ export const translations: Record<Language, TranslationSchema> = {
           status: 'READY_FOR_NEW_PROJECTS',
         },
         footerLocation: 'Location: Tegucigalpa, Honduras (Remote / On-site)',
-        footerViewAll: 'View all 18+ tools & technologies →',
+        footerViewAll: 'View all 15+ tools & technologies →',
       },
     },
     skills: {
       eyebrow: '// 01. STACK & TOOLS',
       streamingStatus: '// CONTINUOUS STREAM • PAUSE ON HOVER',
-      activeCount: '[ 18 ACTIVE TECHNOLOGIES ]',
+      activeCount: '[ 17 ACTIVE TECHNOLOGIES ]',
       viewAllBtn: 'View All',
       itemsCount: 'ITEMS',
       categories: {

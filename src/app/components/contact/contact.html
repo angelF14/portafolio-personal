@@ -84,7 +84,7 @@
           <span class="card-label">{{ lang.t().contact.cvLabel }}</span>
           <span class="card-subtext">{{ lang.t().contact.cvFormat }}</span>
         </div>
-        <a href="cv_ Angel Gabriel Flores Elvir.pdf" download="cv_ Angel Gabriel Flores Elvir.pdf"
+        <a [href]="lang.cvFile()" [download]="lang.cvFile()"
           class="btn-download-pill" target="_blank" rel="noopener">
           <span>{{ lang.t().contact.btnDownload }}</span>
         </a>

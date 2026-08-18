@@ -16,12 +16,14 @@ describe('LanguageService', () => {
   it('should initialize with default language', () => {
     expect(service.currentLang()).toBe('es');
     expect(service.t().nav.skills).toBe('Herramientas');
+    expect(service.cvFile()).toBe('cv_ Angel Gabriel Flores Elvir.pdf');
   });
 
   it('should toggle language to English', () => {
     service.toggleLanguage();
     expect(service.currentLang()).toBe('en');
     expect(service.t().nav.skills).toBe('Tools & Stack');
+    expect(service.cvFile()).toBe('CV_Angel_Gabriel_Flores_Elvir_EN_ATS.pdf');
   });
 
   it('should switch language explicitly and persist in localStorage', () => {
